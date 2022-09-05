@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Build and Push Docker Images
     steps:
-    uses: mr-smithers-excellent/docker-build-push@v5
+    - uses: mr-smithers-excellent/docker-build-push@v5
     with:
       image: goyalanubhav/demo-repo
       registry: docker.io
