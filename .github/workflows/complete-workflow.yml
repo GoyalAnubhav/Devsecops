@@ -50,7 +50,7 @@ jobs:
     name: Build and Push Docker Images
     steps:
     - uses: mr-smithers-excellent/docker-build-push@v5
-    with:
+    - with:
       image: goyalanubhav/demo-repo
       registry: docker.io
       username: ${{ secrets.DOCKER_USERNAME }}
