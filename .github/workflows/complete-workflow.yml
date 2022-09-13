@@ -52,9 +52,9 @@ jobs:
      steps:
      - uses: actions/checkout@v2
        name: Check out code
-       - uses: mr-smithers-excellent/docker-build-push@v5
-         name: Build & push Docker image
-         with:
+     - uses: mr-smithers-excellent/docker-build-push@v5
+       name: Build & push Docker image
+       with:
          image: goyalanubhav/demo-repo
          registry: docker.io
          username: ${{ secrets.DOCKER_USERNAME }}
