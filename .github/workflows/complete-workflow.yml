@@ -13,7 +13,13 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven cloud
+- uses: mr-smithers-excellent/docker-build-push@v5
+with:
+  image: docker-hub-repo/image-name
+  registry: docker.io
+  username: ${{ secrets.DOCKER_USERNAME }}
+  password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Build with Maven cloud
       run:  mvn -B verify sonar:sonar -Dsonar.projectKey=javaprojectreachablity1 -Dsonar.organization=javaprojectreachablity1 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
